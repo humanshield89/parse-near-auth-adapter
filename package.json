@@ -1,0 +1,25 @@
+{
+  "name": "parse-near-auth-adapter",
+  "version": "0.0.1",
+  "description": "Allow users to authenticate with their near wallets",
+  "main": "src/index.js",
+  "scripts": {
+    "format": "prettier --write .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "humanshield85",
+  "license": "MIT",
+  "dependencies": {
+    "js-sha256": "^0.9.0",
+    "near-api-js": "^0.45.1",
+    "parse": "^3.4.3",
+    "parse-server": "^4.10.13"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OpenZeppelin/openzeppelin-contracts.git"
+  },
+  "devDependencies": {
+    "prettier": "^2.5.1"
+  }
+}
