@@ -38,7 +38,7 @@ class NearSignToken extends BaseObjectClass {
   };
 
   static getTokenForWalletId = async (token, walletId) => {
-    const query = new Parse.ParseQuery(NearSignToken.KEYS.className);
+    const query = new Parse.Query(NearSignToken.KEYS.className);
     query.equalTo(NearSignToken.KEYS.token, token);
     query.equalTo(NearSignToken.KEYS.walletId, walletId);
     const tokenObj = await query.first({ useMasterKey: true });
