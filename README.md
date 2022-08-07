@@ -26,6 +26,7 @@ const parseServerApi = new ParseServer({
   auth: {
     NearAuthAdapter: {
       module: NearAuthAdapter,
+      tokenValidity: 10000, // how long a signToken is valid in milis (default 15seconds)
       connectionConfig: {
         networkId: "testnet", // if main net change this to main net
         nodeUrl: "https://rpc.testnet.near.org", // change to match network id
