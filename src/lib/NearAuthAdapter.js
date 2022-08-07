@@ -20,7 +20,7 @@ class NearAuthAdapter {
     const args = [id, token, signature, publicKey];
     const argsKeys = ["id", "token", "signature", "publicKey"];
     args.forEach((arg, i) => {
-      if (!arg) return Promise.reject(new Parse.Error(403, `NearAuthAdapter: ${argsKeys[i]} is required`));
+      if (!arg) throw new Parse.Error(403, `NearAuthAdapter: ${argsKeys[i]} is required`);
     });
 
     // check if this token is valid
@@ -51,7 +51,7 @@ class NearAuthAdapter {
 
     const valid = pubKey.verify(new Uint8Array(sha256.array(token)), uint8ArraySignature);
 
-    if (!valid) return Promise.reject(new Parse.Error(403, "NearAuthAdapter: signature verification failed"));
+    if (!valid) throw new Parse.Error(403, "NearAuthAdapter: signature verification failed");
 
     /**
      * All access keys present for this walletID
@@ -64,9 +64,7 @@ class NearAuthAdapter {
 
     // if no match throw
     if (!match || match?.length === 0) {
-      return Promise.reject(
-        new Parse.Error(403, "NearAuthAdapter: public key is not an assigned access key to the supplied walletId")
-      );
+      throw new Parse.Error(403, "NearAuthAdapter: public key is not an assigned access key to the supplied walletId");
     }
 
     return Promise.resolve(true);
