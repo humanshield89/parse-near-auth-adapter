@@ -1,6 +1,6 @@
 {
   "name": "parse-near-auth-adapter",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "Allow users to authenticate with their near wallets",
   "main": "src/index.js",
   "scripts": {
