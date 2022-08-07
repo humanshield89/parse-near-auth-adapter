@@ -7,7 +7,13 @@
     "format": "prettier --write .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "humanshield85",
+  "keywords": [
+    "Near Network",
+    "parse server",
+    "auth adapter",
+    "blockchain"
+  ],
+  "author": "Rachid Boudjelida <rachidboudjelida@gmail.com> (https://dailycode.dev)",
   "license": "MIT",
   "dependencies": {
     "js-sha256": "^0.9.0",
